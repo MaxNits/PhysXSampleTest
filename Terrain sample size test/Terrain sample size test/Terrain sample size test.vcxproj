@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FFC23363-D113-4165-A02F-05594CF2718C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Terrainsamplesizetest</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\PhysXSDK\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\PhysXSDK\Lib\vc11win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>C:\PhysXSDK\Source\PhysXVehicle\src;C:\PhysXSDK\Snippets\SnippetVehicleCommon;C:\PhysX\PhysXGpu\include;C:\PhysX\Include\foundation;C:\PhysX\foundation\include;C:\PhysX\Include\physxprofilesdk;C:\PhysX\Include\physxvisualdebuggersdk;C:\PhysX\externals\nvToolsExt\1\include;C:\PhysX\externals\nvToolsExt\1\include\stdint;C:\PhysX\Include\cooking;C:\PhysX\Include\common;C:\PhysX\Include\geometry;C:\PhysX\Include\vehicle;C:\PhysX\Include;C:\PhysX\Common\src;C:\PhysX\PhysXCooking\src;C:\PhysX\SceneQuery;C:\PhysX\PvdRuntime\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\PhysXSDK\Lib\vc11win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PhysX3CharacterKinematicDEBUG_x86.lib;PhysX3VehicleDEBUG.lib;PhysXProfileSDKDEBUG.lib;PhysXVisualDebuggerSDKDEBUG.lib;PxTaskDEBUG.lib;PhysX3CookingDEBUG_x86.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicle4W\SnippetVehicle4W.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicle4W\SnippetVehicle4WRender.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicle4WCreate.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicleCreate.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicleFilterShader.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicleRaycast.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicleTireFriction.cpp" />
+    <ClCompile Include="Source.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicleCreate.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicleFilterShader.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicleRaycast.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\PhysXSDK\Snippets\SnippetVehicleCommon\SnippetVehicleTireFriction.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
